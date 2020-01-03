@@ -1,4 +1,4 @@
-package datastore
+package models
 
 import "github.com/arnavsaxena2012/go-restapi/loader"
 

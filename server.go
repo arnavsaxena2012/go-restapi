@@ -6,7 +6,8 @@ import (
 	"net/http"
 	"time"
 
-	_ "github.com/arnavsaxena2012/go-restapi/models"
+	"github.com/arnavsaxena2012/go-restapi/middleware"
+	"github.com/arnavsaxena2012/go-restapi/models"
 	"github.com/gorilla/mux"
 )
 
@@ -21,7 +22,7 @@ func timeTrack(start time.Time, name string) {
 
 func init() {
 	defer timeTrack(time.Now(), "file load")
-	books = &models.Books{}
+	books = &middleware.Books{}
 	books.Initialize()
 }
 

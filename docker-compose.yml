@@ -19,12 +19,12 @@ services:
   db:
         build:
                 context: .
-                dockerfile: int/DB/MySQL/Dockerfile
+                dockerfile: middleware/DB/MySQL/Dockerfile
         container_name: my-sql-server
         ports:
                 - "3306:3306"
         volumes:
-                - ./int/DB/MySQL/csv:/var/lib/mysql-files/
+                - ./middleware/DB/MySQL/csv:/var/lib/mysql-files/
         environment:
                 MYSQL_ROOT_PASSWORD: root
                 MYSQL_DATABASE: mysql
