@@ -13,7 +13,7 @@ services:
                 context: . # Use an image built from the specified dockerfile in the current directory.
                 dockerfile: Dockerfile
         ports:
-                - "8080:8080" 
+                - "80:8080" 
         restart: unless-stopped
 
   db:
