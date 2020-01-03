@@ -1,4 +1,4 @@
-module github.com/arnavsaxena2012/go-api
+module github.com/arnavsaxena2012/go-restapi
 
 go 1.12
 

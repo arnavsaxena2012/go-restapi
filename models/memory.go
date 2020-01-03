@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/arnavsaxena2012/go-api/loader"
+	"github.com/arnavsaxena2012/go-restapi/loader"
 )
 
 type Books struct {

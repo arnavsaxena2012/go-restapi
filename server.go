@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/arnavsaxena2012/go-api/datastore"
+	"github.com/arnavsaxena2012/go-restapi/models"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/gorilla/mux"
 )
@@ -22,12 +22,12 @@ func init() {
 		fmt.Println("Service RUN on DEBUG mode")
 	}
 	defer timeTrack(time.Now(), "file load")
-	books = &datastore.Books{}
+	books = &models.Books{}
 	books.Initialize()
 }
 
 var (
-	books datastore.BookStore
+	books models.BookStore
 )
 
 func timeTrack(start time.Time, name string) {
