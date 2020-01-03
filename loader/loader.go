@@ -1,4 +1,4 @@
-package int
+package loader
 
 import (
 	"encoding/csv"
