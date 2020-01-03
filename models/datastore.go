@@ -1,6 +1,6 @@
 package models
 
-import "github.com/arnavsaxena2012/go-restapi/loader"
+import "https://github.com/arnavsaxena2012/golang_restapi/loader"
 
 type BookStore interface {
 	Initialize()

@@ -1,5 +1,0 @@
-FROM mysql:5.6
-
-WORKDIR "./csv"
-COPY . .
-EXPOSE 3306

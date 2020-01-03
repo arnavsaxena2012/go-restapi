@@ -6,24 +6,33 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/arnavsaxena2012/go-restapi/middleware"
-	"github.com/arnavsaxena2012/go-restapi/models"
+	"github.com/arnavsaxena2012/go-api/datastore"
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/gorilla/mux"
 )
 
+func init() {
+	viper.SetConfigFile(`config.json`)
+	err := viper.ReadInConfig()
+	if err != nil {
+		panic(err)
+	}
+
+	if viper.GetBool(`debug`) {
+		fmt.Println("Service RUN on DEBUG mode")
+	}
+	defer timeTrack(time.Now(), "file load")
+	books = &datastore.Books{}
+	books.Initialize()
+}
+
 var (
-	books models.BookStore
+	books datastore.BookStore
 )
 
 func timeTrack(start time.Time, name string) {
 	elapsed := time.Since(start)
 	log.Printf("%s took %s", name, elapsed)
-}
-
-func init() {
-	defer timeTrack(time.Now(), "file load")
-	books = &middleware.Books{}
-	books.Initialize()
 }
 
 func main() {

@@ -1,0 +1,17 @@
+version : '3.2'
+services:
+        db:
+                build:
+                        context: .
+                        dockerfile: MySQL/Dockerfile
+                ports:
+                        - "3306:3306"
+
+                volumes:
+                        - ./MySQL/csv:/var/lib/mysql-files/
+                
+                environment:
+                        MYSQL_ROOT_PASSWORD: root
+                        MYSQL_DATABASE: mysql
+                        MYSQL_USER: docker
+                        MYSQL_PASSWORD: docker
