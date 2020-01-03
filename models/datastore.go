@@ -1,6 +1,6 @@
 package datastore
 
-import "https://github.com/arnavsaxena2012/go-restapi/loader"
+import "github.com/arnavsaxena2012/go-restapi/loader"
 
 type BookStore interface {
 	Initialize()
@@ -11,4 +11,3 @@ type BookStore interface {
 	DeleteBook(isbn string) bool
 	UpdateBook(isbn string, book *loader.BookData) bool
 }
-
