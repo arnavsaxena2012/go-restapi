@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strconv"
 
-	_ "github.com/arnavsaxena2012/go-restapi/loader"
+	"github.com/arnavsaxena2012/go-restapi/loader"
 	"github.com/gorilla/mux"
 )
 
